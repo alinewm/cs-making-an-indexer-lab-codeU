@@ -59,6 +59,11 @@ public class Index {
 		
 		// for each term in the TermCounter, add the TermCounter to the index
         // TODO: fill this in
+		TermCounter termCounter = new TermCounter(url);
+		termCounter.processElements(paragraphs);
+		for (String key: termCounter.keySet()) {
+			add(key, termCounter);
+		}
 	}
 
 	/**
